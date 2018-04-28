@@ -1,12 +1,12 @@
 <template>
-  <div class="about container">
-    <h1 class="page-header"> About </h1>
+  <div class="createNew container">
+    <h1 class="page-header"> Create New Appointment </h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'about',
+  name: 'createNew',
   data () {
     return {
     }

@@ -3,7 +3,7 @@
     <v-container>
        <v-layout row wrap>
          <v-flex xs12>
-           <v-carousel>
+           <v-carousel hide-controls>
              <v-carousel-item
              v-for="slide in slides"
              :src="slide.imageUrl"
@@ -171,7 +171,7 @@ input.search-form:hover {
 /* making silder */
 .title{
   position: absolute;
-  bottom: 250px;
+  bottom: 300px;
   font-size: 180px;
   color: rgba(0,0,0,1);
   line-height: 50px;

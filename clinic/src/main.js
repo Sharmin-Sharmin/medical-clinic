@@ -9,6 +9,8 @@ import SocialSharing from 'vue-social-sharing'
 import Index from './components/Index'
 import About from './components/About'
 import RequestAppointment from './components/RequestAppointment'
+import ViewAllAppointments from './components/ViewAllAppointments'
+import ViewDetails from './components/ViewDetails'
 import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify)
@@ -22,7 +24,9 @@ const router = new VueRouter({
   routes: [
     {path: '/', component: Index},
     {path: '/about', component: About},
-    {path: '/request', component: RequestAppointment}
+    {path: '/createNew', component: RequestAppointment},
+    {path: '/viewall', component: ViewAllAppointments},
+    {path: '/viewDetails/:id', component: ViewDetails}
   ]
 })
 
@@ -83,9 +87,9 @@ new Vue({
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><router-link to="/">Home</router-link></li>
+                        <li><router-link to="/viewall">View All Appointments</router-link></li>
+                        <li><router-link to="/createNew">Request Appointment</router-link></li>
                         <li><router-link to="/about">About</router-link></li>
-                        <li><router-link to="/request">Request Appointment</router-link></li>
-
                     </ul>
                 </div>
             </div>
