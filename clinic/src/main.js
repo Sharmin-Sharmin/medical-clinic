@@ -11,6 +11,7 @@ import About from './components/About'
 import RequestAppointment from './components/RequestAppointment'
 import ViewAllAppointments from './components/ViewAllAppointments'
 import ViewDetails from './components/ViewDetails'
+import Update from './components/Update'
 import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify)
@@ -26,7 +27,8 @@ const router = new VueRouter({
     {path: '/about', component: About},
     {path: '/createNew', component: RequestAppointment},
     {path: '/viewall', component: ViewAllAppointments},
-    {path: '/viewDetails/:id', component: ViewDetails}
+    {path: '/viewDetails/:id', component: ViewDetails},
+    {path: '/update/:id', component: Update}
   ]
 })
 

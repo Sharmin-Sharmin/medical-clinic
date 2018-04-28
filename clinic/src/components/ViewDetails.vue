@@ -21,7 +21,7 @@
             <li class="list-group-item"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {{appointment.appointment_date}}</li>
      </ul>
       <span class="pull-left">
-      <button class="btn btn-primary" v-on:click="deleteAnAppointment(appointment.id)">Edit Appointment</button>
+      <router-link class="btn btn-primary" v-bind:to="'/update/'+appointment.id">Update Appointment</router-link>
       <button class="btn btn-primary" v-on:click="deleteAnAppointment(appointment.id)">Delete Appointment</button>
       </span>
 

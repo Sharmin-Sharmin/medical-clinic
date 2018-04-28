@@ -2,6 +2,8 @@
   <div class="viewAll container">
     <Alert v-if="alert" v-bind:message="alert" />
     <h1 class="page-header"> All Appointments </h1>
+    <input class="form-control" placeholder="Enter Last Name" v-model="filterInput">
+    <br />
     <table id="t01" class="table table-striped">
       <thead>
         <tr>
@@ -13,7 +15,7 @@
         </tr>
       </thead>
        <tbody>
-        <tr v-for="patient in allAppointments">
+        <tr v-for="patient in filterBy(allAppointments, filterInput)">
           <td>{{patient.first_name}}</td>
           <td>{{patient.last_name}}</td>
           <td>{{patient.phone_number}}</td>
@@ -32,7 +34,8 @@ export default {
   data () {
     return {
     allAppointments: [],
-    alert:''
+    alert:'',
+    filterInput:''
     }
   },
   methods: {
@@ -41,7 +44,13 @@ export default {
       .then(function(response){
          this.allAppointments = response.body;
       });
-    }
+    },
+    filterBy(list, value){
+      value = value.charAt(0).toUpperCase() + value.slice(1);
+      return list.filter(function(patient){
+        return patient.last_name.indexOf(value) > -1;
+        });
+      }
   },
   created: function(){
       if(this.$route.query.alert){

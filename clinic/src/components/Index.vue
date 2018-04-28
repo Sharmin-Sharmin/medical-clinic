@@ -16,6 +16,22 @@
         </v-flex>
        </v-layout>
      </v-container>
+
+     <v-footer height="auto" class="grey darken-3">
+    <v-layout row wrap justify-center>
+      <v-btn
+        color="white"
+        flat
+        v-for="link in links"
+        :key="link"
+      >
+        {{ link }}
+      </v-btn>
+      <v-flex xs12 py-3 text-xs-center white--text>
+        &copy;2018 — <strong>Sharmin</strong>
+      </v-flex>
+    </v-layout>
+  </v-footer>
   </div>
 </template>
 
@@ -37,7 +53,8 @@ export default {
         {
           imageUrl: '/static/images/img1-1.jpg', id: 'yrewyu', title: 'RIGHT THERE WITH YOU'
         }
-      ]
+      ],
+      links: ['Home', 'Our Doctors', 'Specialist', 'Services', 'Blog', 'Contact Us']
     }
   }
 }
